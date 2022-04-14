@@ -30,17 +30,17 @@ jobs:
           export PATH="$PYENV_ROOT/bin:$PATH"
           eval "$(pyenv init --path)"
           eval "$(pyenv init -)"
-          pyenv install --skip-existing ${{ env.TARGET_PYTHON_VERSION }}
-          pyenv global ${{ env.TARGET_PYTHON_VERSION }}
+          pyenv install --skip-existing ${{ env.TARGET_PYTHON_VERSION }}:latest
+          pyenv global ${{ env.TARGET_PYTHON_VERSION }}:latest
       - name: Install Test Pythons
         run: |
           export PYENV_ROOT="$HOME/.pyenv"
           export PATH="$PYENV_ROOT/bin:$PATH"
           eval "$(pyenv init --path)"
           eval "$(pyenv init -)"
-          pyenv install --skip-existing 3.6
-          pyenv install --skip-existing 3.7
-          pyenv install --skip-existing 3.8
+          pyenv install --skip-existing 3.6:latest
+          pyenv install --skip-existing 3.7:latest
+          pyenv install --skip-existing 3.8:latest
       - name: Install pipenv
         run: |
           eval "$(pyenv init --path)"
