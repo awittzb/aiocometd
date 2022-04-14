@@ -22,7 +22,6 @@ jobs:
         uses: actions/setup-python@v3
         with:
           python-version: ${{ env.TARGET_PYTHON_MINOR_VERSION }}
-          cache: 'pip'
       - name: Install pyenv
         run: curl https://pyenv.run | bash
       - name: Install Build Python
